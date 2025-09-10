@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторная 1 - Вариант 10 (CMYK ↔ LAB ↔ RGB)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Лабораторная работа 1 - Вариант 10</h1>
+            <h2>Цветовые модели: CMYK ↔ LAB ↔ RGB</h2>
+        </header>
+
+        <main class="main-content">
+            <section class="color-display-section">
+                <div class="preview-container">
+                    <div id="color-preview"></div>
+                    <div id="color-hex-display">#7F7F7F</div>
+                </div>
+
+                <h3>Последние цвета:</h3>
+                <div id="recent-colors">
+                </div>
+            </section>
+
+            <section class="models-container">
+                <div class="color-model" id="rgb-model">
+                    <h3 class="model-header rgb-header">RGB</h3>
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label for="r">R:</label>
+                            <input type="number" id="r" class="value-input rgb-input" min="0" max="255" value="127">
+                        </div>
+                        <div class="input-group">
+                            <label for="g">G:</label>
+                            <input type="number" id="g" class="value-input rgb-input" min="0" max="255" value="127">
+                        </div>
+                        <div class="input-group">
+                            <label for="b">B:</label>
+                            <input type="number" id="b" class="value-input rgb-input" min="0" max="255" value="127">
+                        </div>
+                    </div>
+                    <div class="sliders-row">
+                        <input type="range" id="r-slider" class="slider rgb-slider" min="0" max="255" value="127">
+                        <input type="range" id="g-slider" class="slider rgb-slider" min="0" max="255" value="127">
+                        <input type="range" id="b-slider" class="slider rgb-slider" min="0" max="255" value="127">
+                    </div>
+                    <div class="picker-row">
+                        <label for="rgb-picker">Палитра:</label>
+                        <input type="color" id="rgb-picker" class="color-picker" value="#7f7f7f">
+                    </div>
+                </div>
+
+                <div class="color-model" id="cmyk-model">
+                    <h3 class="model-header cmyk-header">CMYK</h3>
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label for="c">C (%):</label>
+                            <input type="number" id="c" class="value-input cmyk-input" min="0" max="100" value="0">
+                        </div>
+                        <div class="input-group">
+                            <label for="m">M (%):</label>
+                            <input type="number" id="m" class="value-input cmyk-input" min="0" max="100" value="0">
+                        </div>
+                        <div class="input-group">
+                            <label for="y">Y (%):</label>
+                            <input type="number" id="y" class="value-input cmyk-input" min="0" max="100" value="0">
+                        </div>
+                        <div class="input-group">
+                            <label for="k">K (%):</label>
+                            <input type="number" id="k" class="value-input cmyk-input" min="0" max="100" value="50">
+                        </div>
+                    </div>
+                    <div class="sliders-row">
+                        <input type="range" id="c-slider" class="slider cmyk-slider" min="0" max="100" value="0">
+                        <input type="range" id="m-slider" class="slider cmyk-slider" min="0" max="100" value="0">
+                        <input type="range" id="y-slider" class="slider cmyk-slider" min="0" max="100" value="0">
+                        <input type="range" id="k-slider" class="slider cmyk-slider" min="0" max="100" value="50">
+                    </div>
+                    <div class="picker-row">
+                        <label for="cmyk-picker">Палитра:</label>
+                        <input type="color" id="cmyk-picker" class="color-picker" value="#7f7f7f">
+                    </div>
+                </div>
+
+                <div class="color-model" id="lab-model">
+                    <h3 class="model-header lab-header">LAB</h3>
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label for="l">L:</label>
+                            <input type="number" id="l" class="value-input lab-input" min="0" max="100" step="0.1" value="53.2">
+                        </div>
+                        <div class="input-group">
+                            <label for="a">a:</label>
+                            <input type="number" id="a" class="value-input lab-input" min="-128" max="127" step="0.1" value="0">
+                        </div>
+                        <div class="input-group">
+                            <label for="b_lab">b:</label>
+                            <input type="number" id="b_lab" class="value-input lab-input" min="-128" max="127" step="0.1" value="0">
+                        </div>
+                    </div>
+                    <div class="sliders-row">
+                        <input type="range" id="l-slider" class="slider lab-slider" min="0" max="100" step="0.1" value="53.2">
+                        <input type="range" id="a-slider" class="slider lab-slider" min="-128" max="127" step="0.1" value="0">
+                        <input type="range" id="b_lab-slider" class="slider lab-slider" min="-128" max="127" step="0.1" value="0">
+                    </div>
+                    <div class="picker-row">
+                        <label for="lab-picker">Палитра:</label>
+                        <input type="color" id="lab-picker" class="color-picker" value="#7f7f7f">
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <div id="warning" class="warning hidden"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
